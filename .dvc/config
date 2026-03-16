@@ -1,4 +1,4 @@
 [core]
-    remote = myremote
-['remote "myremote"']
-    url = gdrive://1Y6VjamMD71gV-EeLLMuLFmGjdZ7dIw3j
+    remote = origin
+['remote "origin"']
+    url = https://dagshub.com/Pragyanshu2407/ML-Pipelines.dvc
