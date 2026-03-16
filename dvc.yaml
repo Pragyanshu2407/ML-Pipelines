@@ -1,0 +1,27 @@
+stages:
+  train:
+    cmd: python src/train.py
+    deps:
+      - src/train.py
+    params:
+      - model.test_size
+      - model.random_state
+      - model.n_estimators
+      - model.max_depth
+    outs:
+      - models/model.pkl
+
+  evaluate:
+    cmd: python src/evaluate.py
+    deps:
+      - src/evaluate.py
+      - models/model.pkl
+    params:
+      - model.test_size
+      - model.random_state
+    metrics:
+      - results/metrics.json:
+          cache: false
+    plots:
+      - results/confusion_matrix.png:
+          cache: false

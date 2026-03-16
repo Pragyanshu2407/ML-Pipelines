@@ -1,0 +1,44 @@
+schema: '2.0'
+stages:
+  train:
+    cmd: python src/train.py
+    deps:
+    - path: src/train.py
+      hash: md5
+      md5: e590ac8d45369bd3b4e84d2566980267
+      size: 1617
+    params:
+      params.yaml:
+        model.max_depth: 5
+        model.n_estimators: 100
+        model.random_state: 42
+        model.test_size: 0.2
+    outs:
+    - path: models/model.pkl
+      hash: md5
+      md5: 2f9ff3e7d12465306882dce7b55bb6b5
+      size: 175489
+  evaluate:
+    cmd: python src/evaluate.py
+    deps:
+    - path: models/model.pkl
+      hash: md5
+      md5: 2f9ff3e7d12465306882dce7b55bb6b5
+      size: 175489
+    - path: src/evaluate.py
+      hash: md5
+      md5: 9a14e7fe7011e376c7e91256b597f433
+      size: 2160
+    params:
+      params.yaml:
+        model.random_state: 42
+        model.test_size: 0.2
+    outs:
+    - path: results/confusion_matrix.png
+      hash: md5
+      md5: ead94c6039be41757f396fb8411f9d99
+      size: 19772
+    - path: results/metrics.json
+      hash: md5
+      md5: aabd8d35d98519e59f741085618b682f
+      size: 34
