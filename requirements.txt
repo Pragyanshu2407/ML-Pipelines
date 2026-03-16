@@ -1,0 +1,35 @@
+# ML core
+scikit-learn==1.5.2
+pandas==2.2.3
+numpy==1.26.4
+joblib==1.4.2
+
+# Experiment tracking
+mlflow==2.17.2
+dagshub==0.3.25
+
+# Pipeline & versioning
+dvc==3.56.0
+dvc-gdrive==3.0.1
+
+# Data validation
+great-expectations==0.18.19
+evidently==0.4.33
+
+# API serving
+fastapi==0.115.5
+uvicorn==0.32.1
+
+# Load testing
+locust==2.32.2
+
+# Monitoring
+prometheus-client==0.21.0
+prometheus-fastapi-instrumentator==7.0.0
+
+# Utilities
+python-dotenv==1.0.1
+scipy==1.14.1
+matplotlib==3.9.2
+seaborn==0.13.2
+requests==2.32.3

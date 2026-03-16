@@ -1,0 +1,38 @@
+# Python
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Environment
+.env
+.env.*
+
+# ML artifacts (tracked by DVC, not Git)
+models/*.pkl
+models/*.joblib
+data/raw/*.csv
+data/processed/*.csv
+
+# MLflow
+mlruns/
+
+# Results & reports (generated, not committed)
+results/*.json
+reports/*.html
+
+# DVC internal
+.dvc/tmp/
+.dvc/cache/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
